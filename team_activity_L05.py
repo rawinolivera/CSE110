@@ -29,7 +29,7 @@ elif grade < 93:
     print("You letter grade is: A-")
 elif grade >= 87:
     print("You letter grade is: B+")
-elif grade >= 83:
+elif grade < 87 and grade >= 83:
     print("You letter grade is: B")
 elif grade < 83:
     print("You letter grade is: B-")
