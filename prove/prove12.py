@@ -1,4 +1,4 @@
-with open("../life-expectancy.csv") as life_expectancy_data:
+with open("life-expectancy.csv") as life_expectancy_data:
     str_entity = []
     str_entity2 = []
     str_code = []
@@ -27,6 +27,7 @@ with open("../life-expectancy.csv") as life_expectancy_data:
             str_year.append(i[2])
             str_life_exp.append(i[3])    
 
+    total_year_quantity = 0
     highest_exp = 0.00
     lowest_exp = 999999999.99
     highest_exp2 = 0.00
@@ -76,6 +77,8 @@ with open("../life-expectancy.csv") as life_expectancy_data:
             ge_lo_entity = entity[i]
 
         if  year[i] == interested_year:
+            total_year_quantity += 1
+            total_exp += life_exp[i]
             if life_exp[i] > highest_exp:
                 highest_exp = life_exp[i]
                 hi_year = year[i]
@@ -85,7 +88,7 @@ with open("../life-expectancy.csv") as life_expectancy_data:
                 lowest_exp = life_exp[i]
                 lo_year = year[i]
                 lo_entity = entity[i]
-        total_exp = total_exp + life_exp[i]
+        
 
         country = entity[i]
         if  country.lower() == interested_country.lower():
@@ -100,7 +103,7 @@ with open("../life-expectancy.csv") as life_expectancy_data:
                 lowest_exp2 = life_exp[i]
                 lo_year2 = year[i]
         
-    average = total_exp / len(life_exp)
+    average = total_exp / total_year_quantity
     average2 = total_exp2 / total_years
     print()
 
