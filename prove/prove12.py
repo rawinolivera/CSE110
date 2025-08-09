@@ -100,7 +100,7 @@ with open("../life-expectancy.csv") as life_expectancy_data:
                 lowest_exp2 = life_exp[i]
                 lo_year2 = year[i]
         
-    average = total_exp2 / len(life_exp)
+    average = total_exp / len(life_exp)
     average2 = total_exp2 / total_years
     print()
 
@@ -114,4 +114,5 @@ with open("../life-expectancy.csv") as life_expectancy_data:
 
     print(f"The overall max life expectancy is: {highest_exp2} from {new_country} in {hi_year2}")
     print(f"The overall min life expectancy is: {lowest_exp2} from {new_country} in {lo_year2}")
+
     print(f"The average life expectancy across all years was {average2:.2f}")
